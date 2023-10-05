@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function valid()
+		{
+		var name = document.getElementById('name').value
+		var mail = document.getElementById('email').value
+		var b = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var c= document.getElementById('contact').value
+		var male = document.querySelector( 'input[name="gender"]:checked');  
+		var female = document.querySelector( 'input[name="gender"]:checked'); 
+		var cricket = document.querySelector( 'input[type="checkbox"]:checked'); 	 
+		var Travelling = document.querySelector( 'input[type="checkbox"]:checked'); 	 
+		var Dancing = document.querySelector( 'input[type="checkbox"]:checked'); 	 
+		var Sing = document.querySelector( 'input[type="checkbox"]:checked'); 	 
+		var Play = document.querySelector( 'input[type="checkbox"]:checked');
+		var pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,14}$/;
+		var password = document.getElementById('password').value
+		var select = document.getElementById('select').value
+ 	 
+
+
+			if (name == '')
+			{		
+				alert('please enter name')
+				return false
+
+			}
+
+			if (!mail.match(b)) 
+			{
+    				alert("Please enter valid email Id");
+    				return false;
+ 			}
+ 			if (c == '')
+			{
+				alert('please enter your contact number')
+				return false
+			}
+
+ 			if (male == null && female == null)
+ 			{
+ 			 	alert("select your gender")
+ 			 	return false
+ 			}
+
+
+		 	if (cricket == null && Travelling == null && Dancing == null && Sing == null && Play == null) 
+		 	{
+		 		alert('please select your hobby')
+		 		return false
+		 	}
+
+		 	if (select == '')
+		 	{
+		 		alert('please select your city')
+		 		return false
+		 	}
+			if (!password.match(pass))
+			{
+				alert('enter valid password 1 alphabet Uppercase 1 special charactor and 1 number ')
+				return false
+			}
+		
+		}		
+	</script>
+
+
+</head>
+<body>
+	<style type="text/css">
+		form{
+/*			margin-left: 50px;*/
+		}
+		.radhe{
+			margin-left: 45%;
+					}
+		#submit
+		{
+			background-color: lightblue;
+			height: 30px;
+			width: 100px;
+
+		}
+		#submit:hover{
+			background-color: green;
+		}
+		#hobby{
+			margin-left: 60px;
+		}
+
+	</style>
+<div class="radhe">
+<form onsubmit="return valid()">
+	Name : <input type="text" id="name" name="" placeholder="enter name"><br><br>
+	Email : <input type="text" id="email" name=""><br><br>
+	Contact : <input type="text" id="contact" name="" minlength="10" maxlength="10"><br><br>
+	Gender : <input type="radio" id="male" name="gender">male
+	 		 <input type="radio" id="female" name="gender">female<br><br>
+	
+	Hobby : 	<input type="checkbox" id="hobby1"  name="">Cricket<br>
+	 			<input type="checkbox" id="hobby" name="">Travelling<br>
+	 			<input type="checkbox" id="hobby" name="">Dancing<br>
+	 			<input type="checkbox" id="hobby" name="">Sing a song<br>
+	 			<input type="checkbox" id="hobby" name="">Play Video Games<br><br>
+	City :	<select id="select">
+				<option value="" >Select City</option>
+				<option value="1" >Surat</option>
+				<option value="2" >bhavangar</option>
+				<option value="3" >ahmadabad</option>
+				<option value="4" >Mumbai</option>
+				<option value="5" >Kolkata</option>
+				<option value="6" >Rajasthan</option>
+				<option value="7" >Delhi</option>
+			</select><br><br>	
+	Password : <input type="text" id="password" name=""><br><br>	
+	<input type="submit" value="submit" id="submit" name="">
+	</div>	 		 
+
+
+</form>
+</body>
+</html>
